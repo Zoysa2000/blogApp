@@ -1,12 +1,14 @@
 import { useState } from "react";
 import { Button, Modal, Form } from "react-bootstrap";
 import { FiEdit } from "react-icons/fi";
+import axios from "axios";
+
+
 
 const EditPopup = ({ content, blogId }) => {
     const [show, setShow] = useState(false);
     const [editedContent, setEditedContent] = useState(content); // Store editable content
 
-    console.log("Blog ID:", blogId);
 
     const handleClose = () => setShow(false);
     const handleShow = () => {
@@ -14,17 +16,25 @@ const EditPopup = ({ content, blogId }) => {
         setShow(true);
     };
 
-    const handleSave = () => {
+    const handleSave = async () => {
         const updatedData = {
-            blogId: blogId,
-            content: editedContent, // Use the updated content
+            content: editedContent,
         };
 
-        console.log("Updated Blog Data:", updatedData); // Debugging log
-        alert(`Blog ID: ${blogId}\nUpdated Content: ${editedContent}`);
 
-        // Close modal after saving
-        handleClose();
+        try {
+            const response = await axios.put(`http://localhost:5555/updateBlog/${blogId}`, updatedData);
+
+            if (response.status === 200) {
+                alert(response.data.message);
+            }
+        } catch (error) {
+            console.error("Error updating blog:", error);
+            alert("Failed to update blog. Please try again.");
+        }
+
+
+
     };
 
     return (
