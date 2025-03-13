@@ -18,7 +18,7 @@ const EditPopup = ({ content, blogId }) => {
 
     const handleSave = async () => {
         const updatedData = {
-            content: editedContent, // Use the updated content
+            content: editedContent,
         };
 
 
