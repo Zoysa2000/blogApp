@@ -7,6 +7,8 @@ import { useState } from "react";
 import Backblogs from "./Backblogs";
 import { Button } from "react-bootstrap";
 import { MdOutlineReviews } from "react-icons/md";
+
+import EditPopup from "../SubComponet/Editpopup";
 function Bloginfo()
 {
     const [ratingsSum, setRatingsSum] = useState({});
@@ -59,6 +61,7 @@ function Bloginfo()
           console.log(error);
           });
       };
+
  return(
     <>
      <div className="container">
@@ -80,6 +83,7 @@ function Bloginfo()
    </div>
    <h3 className="mt-3" style={{color:"#2AAA8A",fontFamily:'Noto Serif'}}>Blog content</h3>
    <p className="content mt-2">{removePTags(blogInfo.content)}</p>
+        <EditPopup content={removePTags(blogInfo.content)} blogId={blogInfo._id} />
    <div className="mt-3">
     <h3 style={{color:"#2AAA8A",fontFamily:'Noto Serif'}}>Readers comments</h3>
      <div className="row mt-2">
