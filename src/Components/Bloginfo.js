@@ -62,11 +62,6 @@ function Bloginfo()
           });
       };
 
-      const editBlog = (blogId)=>
-      {
-
-
-      }
  return(
     <>
      <div className="container">
