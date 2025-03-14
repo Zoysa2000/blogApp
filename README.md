@@ -1,4 +1,15 @@
+# **IntelleWave - Tech Blog Platform**
 
+IntelleWave is a tech blog platform built on the MERN stack, allowing users to create, update, and delete posts, rate content, and add comments. It integrates OpenAI's API for chatbot features and content generation, enhancing the blogging experience.
+
+## Features
+- User authentication and authorization
+- CRUD functionality for blog posts
+- Content rating and commenting system
+- OpenAI API integration for chatbot and content generation
+- Responsive and user-friendly UI
+
+  
 ![Screenshot (1161)](https://github.com/user-attachments/assets/6c8a1c3e-72e2-4deb-b14f-cfc3735cc476)
 ![Screenshot (1163)](https://github.com/user-attachments/assets/86bba04e-073e-49a8-995d-4c949bb271fc)
 ![Screenshot (1164)](https://github.com/user-attachments/assets/c1098cf5-97a3-462a-9a4c-5c589341fcda)
